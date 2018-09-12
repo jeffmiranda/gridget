@@ -1,0 +1,389 @@
+@import "../node_modules/susy/sass/susy";
+@import "../node_modules/breakpoint-sass/stylesheets/breakpoint";
+
+/* !BREAKPOINTS */
+/* ========================================================================== */
+$break-xxl: 1400px;
+$break-xl: 1200px;
+$break-l: 992px;
+$break-m: 768px;
+$break-s: 576px;
+
+
+/* !BOX MODEL */
+/* ========================================================================== */
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+/* !SUSY DEFAULTS */
+/* ========================================================================== */
+$gutters: 0.5;
+$columns: 12;
+$susy: (
+	'columns': susy-repeat($columns),
+	'gutters': $gutters,
+    'spread': 'narrow',
+    'container-spread': 'narrow'
+);
+$no-gut: (
+	'columns': susy-repeat($columns),
+	'gutters': 0,
+    'spread': 'narrow',
+    'container-spread': 'narrow'
+);
+
+
+/* !GRID MIXINS */
+/* ========================================================================== */
+@mixin cf {
+    &:after {
+        content: " ";
+        display: block;
+        clear: both;
+    }
+}
+@mixin container($maxwidth: 100%) {
+    max-width: $maxwidth;
+    margin-left: auto;
+    margin-right: auto;
+    @include cf;
+}
+@mixin last {
+    float: right;
+    margin-right: 0;
+}
+@mixin col($span, $config: $susy) {
+    float: left;
+    width: span($span, $config);
+    max-width: span($span, $config);
+    flex: 0 0 span($span, $config);
+    margin-bottom: 0;
+    &:last-child { @include last(); }
+}
+
+
+/* !GRID */
+/* ========================================================================== */
+.max-wrap { @include container($break-xl); }
+.padding { padding: gutter(); }
+.padding-2x { padding: gutter()*2; }
+.padding-3x { padding: gutter()*3; }
+.padding-4x { padding: gutter()*4; }
+.padding-top { padding-top: gutter(); }
+.padding-top-2x { padding-top: gutter()*2; }
+.padding-top-3x { padding-top: gutter()*3; }
+.padding-top-4x { padding-top: gutter()*4; }
+.padding-right { padding-right: gutter(); }
+.padding-right-2x { padding-right: gutter()*2; }
+.padding-right-3x { padding-right: gutter()*3; }
+.padding-right-4x { padding-right: gutter()*4; }
+.padding-bottom { padding-bottom: gutter(); }
+.padding-bottom-2x { padding-bottom: gutter()*2; }
+.padding-bottom-3x { padding-bottom: gutter()*3; }
+.padding-bottom-4x { padding-bottom: gutter()*4; }
+.padding-left { padding-left: gutter(); }
+.padding-left-2x { padding-left: gutter()*2; }
+.padding-left-3x { padding-left: gutter()*3; }
+.padding-left-4x { padding-left: gutter()*4; }
+.margin { margin: gutter(); }
+.margin-2x { margin: gutter()*2; }
+.margin-3x { margin: gutter()*3; }
+.margin-4x { margin: gutter()*4; }
+.margin-top { margin-top: gutter(); }
+.margin-top-2x { margin-top: gutter()*2; }
+.margin-top-3x { margin-top: gutter()*3; }
+.margin-top-4x { margin-top: gutter()*4; }
+.margin-right { margin-right: gutter(); }
+.margin-right-2x { margin-right: gutter()*2; }
+.margin-right-3x { margin-right: gutter()*3; }
+.margin-right-4x { margin-right: gutter()*4; }
+.margin-bottom { margin-bottom: gutter(); }
+.margin-bottom-2x { margin-bottom: gutter()*2; }
+.margin-bottom-3x { margin-bottom: gutter()*3; }
+.margin-bottom-4x { margin-bottom: gutter()*4; }
+.margin-left { margin-left: gutter(); }
+.margin-left-2x { margin-left: gutter()*2; }
+.margin-left-3x { margin-left: gutter()*3; }
+.margin-left-4x { margin-left: gutter()*4; }
+.grid {
+    background: susy-svg-grid() no-repeat scroll;
+    @include cf();
+    display: flex;
+    flex-wrap: wrap;
+    > [class*="col-"] { width: 100%; }
+    &.align-centre { align-items: center; }
+    &.gutters > [class*="col-"] {
+        margin-bottom: gutter();
+        &:last-child { margin-bottom: 0; }
+    }
+    @include breakpoint($break-s) {
+        > .col-sm1 { @include col(1, $no-gut); }
+        > .col-sm2 { @include col(2, $no-gut); }
+        > .col-sm3 { @include col(3, $no-gut); }
+        > .col-sm4 { @include col(4, $no-gut); }
+        > .col-sm5 { @include col(5, $no-gut); }
+        > .col-sm6 { @include col(6, $no-gut); }
+        > .col-sm7 { @include col(7, $no-gut); }
+        > .col-sm8 { @include col(8, $no-gut); }
+        > .col-sm9 { @include col(9, $no-gut); }
+        > .col-sm10 { @include col(10, $no-gut); }
+        > .col-sm11 { @include col(11, $no-gut); }
+        > .col-sm12 { @include col(12, $no-gut); }
+        .push-sm1 { margin-left: span(1, $no-gut); }
+        .push-sm2 { margin-left: span(2, $no-gut); }
+        .push-sm3 { margin-left: span(3, $no-gut); }
+        .push-sm4 { margin-left: span(4, $no-gut); }
+        .push-sm5 { margin-left: span(5, $no-gut); }
+        .push-sm6 { margin-left: span(6, $no-gut); }
+        .push-sm7 { margin-left: span(7, $no-gut); }
+        .push-sm8 { margin-left: span(8, $no-gut); }
+        .push-sm9 { margin-left: span(9, $no-gut); }
+        .push-sm10 { margin-left: span(10, $no-gut); }
+        .push-sm11 { margin-left: span(11, $no-gut); }
+        .push-sm12 { margin-left: span(12, $no-gut); }
+        &.gutters {
+            > .col-sm1 { margin-right: gutter(); @include col(1); }
+            > .col-sm2 { margin-right: gutter(); @include col(2); }
+            > .col-sm3 { margin-right: gutter(); @include col(3); }
+            > .col-sm4 { margin-right: gutter(); @include col(4); }
+            > .col-sm5 { margin-right: gutter(); @include col(5); }
+            > .col-sm6 { margin-right: gutter(); @include col(6); }
+            > .col-sm7 { margin-right: gutter(); @include col(7); }
+            > .col-sm8 { margin-right: gutter(); @include col(8); }
+            > .col-sm9 { margin-right: gutter(); @include col(9); }
+            > .col-sm10 { margin-right: gutter(); @include col(10); }
+            > .col-sm11 { margin-right: gutter(); @include col(11); }
+            > .col-sm12 { margin-right: gutter(); @include col(12); }
+            .push-sm1 { margin-left: span(1 wide); }
+            .push-sm2 { margin-left: span(2 wide); }
+            .push-sm3 { margin-left: span(3 wide); }
+            .push-sm4 { margin-left: span(4 wide); }
+            .push-sm5 { margin-left: span(5 wide); }
+            .push-sm6 { margin-left: span(6 wide); }
+            .push-sm7 { margin-left: span(7 wide); }
+            .push-sm8 { margin-left: span(8 wide); }
+            .push-sm9 { margin-left: span(9 wide); }
+            .push-sm10 { margin-left: span(10 wide); }
+            .push-sm11 { margin-left: span(11 wide); }
+            .push-sm12 { margin-left: span(12 wide); }
+        }
+    }
+    @include breakpoint($break-m) {
+        > .col-md1 { @include col(1, $no-gut); }
+        > .col-md2 { @include col(2, $no-gut); }
+        > .col-md3 { @include col(3, $no-gut); }
+        > .col-md4 { @include col(4, $no-gut); }
+        > .col-md5 { @include col(5, $no-gut); }
+        > .col-md6 { @include col(6, $no-gut); }
+        > .col-md7 { @include col(7, $no-gut); }
+        > .col-md8 { @include col(8, $no-gut); }
+        > .col-md9 { @include col(9, $no-gut); }
+        > .col-md10 { @include col(10, $no-gut); }
+        > .col-md11 { @include col(11, $no-gut); }
+        > .col-md12 { @include col(12, $no-gut); }
+        .push-md1 { margin-left: span(1, $no-gut); }
+        .push-md2 { margin-left: span(2, $no-gut); }
+        .push-md3 { margin-left: span(3, $no-gut); }
+        .push-md4 { margin-left: span(4, $no-gut); }
+        .push-md5 { margin-left: span(5, $no-gut); }
+        .push-md6 { margin-left: span(6, $no-gut); }
+        .push-md7 { margin-left: span(7, $no-gut); }
+        .push-md8 { margin-left: span(8, $no-gut); }
+        .push-md9 { margin-left: span(9, $no-gut); }
+        .push-md10 { margin-left: span(10, $no-gut); }
+        .push-md11 { margin-left: span(11, $no-gut); }
+        .push-md12 { margin-left: span(12, $no-gut); }
+        &.gutters {
+            > .col-md1 { margin-right: gutter(); @include col(1); }
+            > .col-md2 { margin-right: gutter(); @include col(2); }
+            > .col-md3 { margin-right: gutter(); @include col(3); }
+            > .col-md4 { margin-right: gutter(); @include col(4); }
+            > .col-md5 { margin-right: gutter(); @include col(5); }
+            > .col-md6 { margin-right: gutter(); @include col(6); }
+            > .col-md7 { margin-right: gutter(); @include col(7); }
+            > .col-md8 { margin-right: gutter(); @include col(8); }
+            > .col-md9 { margin-right: gutter(); @include col(9); }
+            > .col-md10 { margin-right: gutter(); @include col(10); }
+            > .col-md11 { margin-right: gutter(); @include col(11); }
+            > .col-md12 { margin-right: gutter(); @include col(12); }
+            .push-md1 { margin-left: span(1 wide); }
+            .push-md2 { margin-left: span(2 wide); }
+            .push-md3 { margin-left: span(3 wide); }
+            .push-md4 { margin-left: span(4 wide); }
+            .push-md5 { margin-left: span(5 wide); }
+            .push-md6 { margin-left: span(6 wide); }
+            .push-md7 { margin-left: span(7 wide); }
+            .push-md8 { margin-left: span(8 wide); }
+            .push-md9 { margin-left: span(9 wide); }
+            .push-md10 { margin-left: span(10 wide); }
+            .push-md11 { margin-left: span(11 wide); }
+            .push-md12 { margin-left: span(12 wide); }
+        }
+    }
+    @include breakpoint($break-l) {
+        > .col-lg1 { @include col(1, $no-gut); }
+        > .col-lg2 { @include col(2, $no-gut); }
+        > .col-lg3 { @include col(3, $no-gut); }
+        > .col-lg4 { @include col(4, $no-gut); }
+        > .col-lg5 { @include col(5, $no-gut); }
+        > .col-lg6 { @include col(6, $no-gut); }
+        > .col-lg7 { @include col(7, $no-gut); }
+        > .col-lg8 { @include col(8, $no-gut); }
+        > .col-lg9 { @include col(9, $no-gut); }
+        > .col-lg10 { @include col(10, $no-gut); }
+        > .col-lg11 { @include col(11, $no-gut); }
+        > .col-lg12 { @include col(12, $no-gut); }
+        .push-lg1 { margin-left: span(1, $no-gut); }
+        .push-lg2 { margin-left: span(2, $no-gut); }
+        .push-lg3 { margin-left: span(3, $no-gut); }
+        .push-lg4 { margin-left: span(4, $no-gut); }
+        .push-lg5 { margin-left: span(5, $no-gut); }
+        .push-lg6 { margin-left: span(6, $no-gut); }
+        .push-lg7 { margin-left: span(7, $no-gut); }
+        .push-lg8 { margin-left: span(8, $no-gut); }
+        .push-lg9 { margin-left: span(9, $no-gut); }
+        .push-lg10 { margin-left: span(10, $no-gut); }
+        .push-lg11 { margin-left: span(11, $no-gut); }
+        .push-lg12 { margin-left: span(12, $no-gut); }
+        &.gutters {
+            > .col-lg1 { margin-right: gutter(); @include col(1); }
+            > .col-lg2 { margin-right: gutter(); @include col(2); }
+            > .col-lg3 { margin-right: gutter(); @include col(3); }
+            > .col-lg4 { margin-right: gutter(); @include col(4); }
+            > .col-lg5 { margin-right: gutter(); @include col(5); }
+            > .col-lg6 { margin-right: gutter(); @include col(6); }
+            > .col-lg7 { margin-right: gutter(); @include col(7); }
+            > .col-lg8 { margin-right: gutter(); @include col(8); }
+            > .col-lg9 { margin-right: gutter(); @include col(9); }
+            > .col-lg10 { margin-right: gutter(); @include col(10); }
+            > .col-lg11 { margin-right: gutter(); @include col(11); }
+            > .col-lg12 { margin-right: gutter(); @include col(12); }
+            .push-lg1 { margin-left: span(1 wide); }
+            .push-lg2 { margin-left: span(2 wide); }
+            .push-lg3 { margin-left: span(3 wide); }
+            .push-lg4 { margin-left: span(4 wide); }
+            .push-lg5 { margin-left: span(5 wide); }
+            .push-lg6 { margin-left: span(6 wide); }
+            .push-lg7 { margin-left: span(7 wide); }
+            .push-lg8 { margin-left: span(8 wide); }
+            .push-lg9 { margin-left: span(9 wide); }
+            .push-lg10 { margin-left: span(10 wide); }
+            .push-lg11 { margin-left: span(11 wide); }
+            .push-lg12 { margin-left: span(12 wide); }
+        }
+    }
+    @include breakpoint($break-xl) {
+        > .col-xl1 { @include col(1, $no-gut); }
+        > .col-xl2 { @include col(2, $no-gut); }
+        > .col-xl3 { @include col(3, $no-gut); }
+        > .col-xl4 { @include col(4, $no-gut); }
+        > .col-xl5 { @include col(5, $no-gut); }
+        > .col-xl6 { @include col(6, $no-gut); }
+        > .col-xl7 { @include col(7, $no-gut); }
+        > .col-xl8 { @include col(8, $no-gut); }
+        > .col-xl9 { @include col(9, $no-gut); }
+        > .col-xl10 { @include col(10, $no-gut); }
+        > .col-xl11 { @include col(11, $no-gut); }
+        > .col-xl12 { @include col(12, $no-gut); }
+        .push-xl1 { margin-left: span(1, $no-gut); }
+        .push-xl2 { margin-left: span(2, $no-gut); }
+        .push-xl3 { margin-left: span(3, $no-gut); }
+        .push-xl4 { margin-left: span(4, $no-gut); }
+        .push-xl5 { margin-left: span(5, $no-gut); }
+        .push-xl6 { margin-left: span(6, $no-gut); }
+        .push-xl7 { margin-left: span(7, $no-gut); }
+        .push-xl8 { margin-left: span(8, $no-gut); }
+        .push-xl9 { margin-left: span(9, $no-gut); }
+        .push-xl10 { margin-left: span(10, $no-gut); }
+        .push-xl11 { margin-left: span(11, $no-gut); }
+        .push-xl12 { margin-left: span(12, $no-gut); }
+        &.gutters {
+            > .col-xl1 { margin-right: gutter(); @include col(1); }
+            > .col-xl2 { margin-right: gutter(); @include col(2); }
+            > .col-xl3 { margin-right: gutter(); @include col(3); }
+            > .col-xl4 { margin-right: gutter(); @include col(4); }
+            > .col-xl5 { margin-right: gutter(); @include col(5); }
+            > .col-xl6 { margin-right: gutter(); @include col(6); }
+            > .col-xl7 { margin-right: gutter(); @include col(7); }
+            > .col-xl8 { margin-right: gutter(); @include col(8); }
+            > .col-xl9 { margin-right: gutter(); @include col(9); }
+            > .col-xl10 { margin-right: gutter(); @include col(10); }
+            > .col-xl11 { margin-right: gutter(); @include col(11); }
+            > .col-xl12 { margin-right: gutter(); @include col(12); }
+            .push-xl1 { margin-left: span(1 wide); }
+            .push-xl2 { margin-left: span(2 wide); }
+            .push-xl3 { margin-left: span(3 wide); }
+            .push-xl4 { margin-left: span(4 wide); }
+            .push-xl5 { margin-left: span(5 wide); }
+            .push-xl6 { margin-left: span(6 wide); }
+            .push-xl7 { margin-left: span(7 wide); }
+            .push-xl8 { margin-left: span(8 wide); }
+            .push-xl9 { margin-left: span(9 wide); }
+            .push-xl10 { margin-left: span(10 wide); }
+            .push-xl11 { margin-left: span(11 wide); }
+            .push-xl12 { margin-left: span(12 wide); }
+        }
+    }
+    @include breakpoint($break-xxl) {
+        > .col-xxl1 { @include col(1, $no-gut); }
+        > .col-xxl2 { @include col(2, $no-gut); }
+        > .col-xxl3 { @include col(3, $no-gut); }
+        > .col-xxl4 { @include col(4, $no-gut); }
+        > .col-xxl5 { @include col(5, $no-gut); }
+        > .col-xxl6 { @include col(6, $no-gut); }
+        > .col-xxl7 { @include col(7, $no-gut); }
+        > .col-xxl8 { @include col(8, $no-gut); }
+        > .col-xxl9 { @include col(9, $no-gut); }
+        > .col-xxl10 { @include col(10, $no-gut); }
+        > .col-xxl11 { @include col(11, $no-gut); }
+        > .col-xxl12 { @include col(12, $no-gut); }
+        .push-xxl1 { margin-left: span(1, $no-gut); }
+        .push-xxl2 { margin-left: span(2, $no-gut); }
+        .push-xxl3 { margin-left: span(3, $no-gut); }
+        .push-xxl4 { margin-left: span(4, $no-gut); }
+        .push-xxl5 { margin-left: span(5, $no-gut); }
+        .push-xxl6 { margin-left: span(6, $no-gut); }
+        .push-xxl7 { margin-left: span(7, $no-gut); }
+        .push-xxl8 { margin-left: span(8, $no-gut); }
+        .push-xxl9 { margin-left: span(9, $no-gut); }
+        .push-xxl10 { margin-left: span(10, $no-gut); }
+        .push-xxl11 { margin-left: span(11, $no-gut); }
+        .push-xxl12 { margin-left: span(12, $no-gut); }
+        &.gutters {
+            > .col-xxl1 { margin-right: gutter(); @include col(1); }
+            > .col-xxl2 { margin-right: gutter(); @include col(2); }
+            > .col-xxl3 { margin-right: gutter(); @include col(3); }
+            > .col-xxl4 { margin-right: gutter(); @include col(4); }
+            > .col-xxl5 { margin-right: gutter(); @include col(5); }
+            > .col-xxl6 { margin-right: gutter(); @include col(6); }
+            > .col-xxl7 { margin-right: gutter(); @include col(7); }
+            > .col-xxl8 { margin-right: gutter(); @include col(8); }
+            > .col-xxl9 { margin-right: gutter(); @include col(9); }
+            > .col-xxl10 { margin-right: gutter(); @include col(10); }
+            > .col-xxl11 { margin-right: gutter(); @include col(11); }
+            > .col-xxl12 { margin-right: gutter(); @include col(12); }
+            .push-xxl1 { margin-left: span(1 wide); }
+            .push-xxl2 { margin-left: span(2 wide); }
+            .push-xxl3 { margin-left: span(3 wide); }
+            .push-xxl4 { margin-left: span(4 wide); }
+            .push-xxl5 { margin-left: span(5 wide); }
+            .push-xxl6 { margin-left: span(6 wide); }
+            .push-xxl7 { margin-left: span(7 wide); }
+            .push-xxl8 { margin-left: span(8 wide); }
+            .push-xxl9 { margin-left: span(9 wide); }
+            .push-xxl10 { margin-left: span(10 wide); }
+            .push-xxl11 { margin-left: span(11 wide); }
+            .push-xxl12 { margin-left: span(12 wide); }
+        }
+    }
+    &.hanging-col {
+        @include breakpoint($break-s) { > [class*="col-sm"]:last-child { float: left; } }
+        @include breakpoint($break-m) { > [class*="col-md"]:last-child { float: left; } }
+        @include breakpoint($break-l) { > [class*="col-lg"]:last-child { float: left; } }
+        @include breakpoint($break-xl) { > [class*="col-xl"]:last-child { float: left; } }
+        @include breakpoint($break-xxl) { > [class*="col-xxl"]:last-child { float: left; } }
+    }
+}
