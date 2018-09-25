@@ -1,0 +1,451 @@
+@import "../node_modules/susy/sass/susy";
+@import "../node_modules/breakpoint-sass/stylesheets/breakpoint";
+
+/* !BREAKPOINTS */
+/* ========================================================================== */
+$break-xxl: 1400px;
+$break-xl: 1200px;
+$break-l: 992px;
+$break-m: 768px;
+$break-s: 576px;
+
+
+/* !BOX MODEL */
+/* ========================================================================== */
+*,
+*::before,
+*::after {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+/* !SUSY DEFAULTS */
+/* ========================================================================== */
+$gutters: 0.5;
+$columns: 12;
+$susy: (
+	'columns': susy-repeat($columns),
+	'gutters': $gutters,
+    'spread': 'narrow',
+    'container-spread': 'narrow'
+);
+$no-gut: (
+	'columns': susy-repeat($columns),
+	'gutters': 0,
+    'spread': 'narrow',
+    'container-spread': 'narrow'
+);
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+ .hidden {
+    display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix::before,
+.clearfix::after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix::after {
+    clear: both;
+}
+
+
+/* !BACKGROUNDS */
+/* ========================================================================== */
+.grey-bg { background-color: tint($rgb-tan, 10%) !important; }
+.brown-bg { background-color: shade($rgb-tan, 90%) !important; }
+.bg-mnp-brown { background-color: $rgb-mnp-brown; }
+/**
+ * Use the class below to set a background image on an element
+ * and then set the background-image url() inline
+ */
+.img-bg, .bg-img {
+    background-color: $rgb-tan;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+}
+.bg-fixed { background-attachment: fixed; }
+
+
+/* !TEXT FORMATTING */
+/* ========================================================================== */
+.centre { text-align: center !important; }
+.green-txt { color: $rgb-mnp-green !important; }
+.white-txt { color: white !important; }
+.uppercase { text-transform: uppercase !important; }
+.lowercase { text-transform: lowercase !important; }
+.sm-txt { font-size: 0.875em !important; }
+.xs-txt { font-size: 0.75em !important; }
+.xxs-txt { font-size: 0.625em !important; }
+.two-column,
+.three-column { column-gap: gutter(); }
+.two-column {
+	column-count: 1;
+	@include breakpoint($break-s) { column-count: 2; }
+}
+.three-column {
+	column-count: 1;
+	@include breakpoint($break-s) { column-count: 2; }
+	@include breakpoint($break-l) { column-count: 3; }
+}
+
+
+/* !IMAGE FORMATTING */
+/* ========================================================================== */
+.resp-img { max-width: 100%; }
+
+
+/* !LAYOUT */
+/* ========================================================================== */
+.float-left { float: left !important; }
+.float-right { float: right !important; }
+.padding { padding: gutter(); }
+.padding-2x { padding: gutter()*2; }
+.padding-3x { padding: gutter()*3; }
+.padding-4x { padding: gutter()*4; }
+.padding-top { padding-top: gutter(); }
+.padding-top-2x { padding-top: gutter()*2; }
+.padding-top-3x { padding-top: gutter()*3; }
+.padding-top-4x { padding-top: gutter()*4; }
+.padding-right { padding-right: gutter(); }
+.padding-right-2x { padding-right: gutter()*2; }
+.padding-right-3x { padding-right: gutter()*3; }
+.padding-right-4x { padding-right: gutter()*4; }
+.padding-bottom { padding-bottom: gutter(); }
+.padding-bottom-2x { padding-bottom: gutter()*2; }
+.padding-bottom-3x { padding-bottom: gutter()*3; }
+.padding-bottom-4x { padding-bottom: gutter()*4; }
+.padding-left { padding-left: gutter(); }
+.padding-left-2x { padding-left: gutter()*2; }
+.padding-left-3x { padding-left: gutter()*3; }
+.padding-left-4x { padding-left: gutter()*4; }
+.margin { margin: gutter(); }
+.margin-2x { margin: gutter()*2; }
+.margin-3x { margin: gutter()*3; }
+.margin-4x { margin: gutter()*4; }
+.margin-top { margin-top: gutter(); }
+.margin-top-2x { margin-top: gutter()*2; }
+.margin-top-3x { margin-top: gutter()*3; }
+.margin-top-4x { margin-top: gutter()*4; }
+.margin-right { margin-right: gutter(); }
+.margin-right-2x { margin-right: gutter()*2; }
+.margin-right-3x { margin-right: gutter()*3; }
+.margin-right-4x { margin-right: gutter()*4; }
+.margin-bottom { margin-bottom: gutter(); }
+.margin-bottom-2x { margin-bottom: gutter()*2; }
+.margin-bottom-3x { margin-bottom: gutter()*3; }
+.margin-bottom-4x { margin-bottom: gutter()*4; }
+.margin-left { margin-left: gutter(); }
+.margin-left-2x { margin-left: gutter()*2; }
+.margin-left-3x { margin-left: gutter()*3; }
+.margin-left-4x { margin-left: gutter()*4; }
+.margin-0 { margin: 0 !important; }
+.margin-10 { margin: calcRem(10px) !important; }
+.margin-15 { margin: calcRem(15px) !important; }
+.margin-20 { margin: calcRem(20px) !important; }
+.margin-25 { margin: calcRem(25px) !important; }
+.margin-30 { margin: calcRem(30px) !important; }
+.margin-50 { margin: calcRem(50px) !important; }
+.margin-60 { margin: calcRem(60px) !important; }
+.margin-top-0  { margin-top: 0 !important; }
+.margin-top-10 { margin-top: calcRem(10px) !important; }
+.margin-top-15 { margin-top: calcRem(15px) !important; }
+.margin-top-20 { margin-top: calcRem(20px) !important; }
+.margin-top-25 { margin-top: calcRem(25px) !important; }
+.margin-top-30 { margin-top: calcRem(30px) !important; }
+.margin-top-50 { margin-top: calcRem(50px) !important; }
+.margin-top-60 { margin-top: calcRem(60px) !important; }
+.margin-right-0  { margin-right: 0 !important; }
+.margin-right-10 { margin-right: calcRem(10px) !important; }
+.margin-right-15 { margin-right: calcRem(15px) !important; }
+.margin-right-20 { margin-right: calcRem(20px) !important; }
+.margin-right-25 { margin-right: calcRem(25px) !important; }
+.margin-right-30 { margin-right: calcRem(30px) !important; }
+.margin-right-50 { margin-right: calcRem(50px) !important; }
+.margin-right-60 { margin-right: calcRem(60px) !important; }
+.margin-bottom-0  { margin-bottom: 0 !important; }
+.margin-bottom-10 { margin-bottom: calcRem(10px) !important; }
+.margin-bottom-15 { margin-bottom: calcRem(15px) !important; }
+.margin-bottom-20 { margin-bottom: calcRem(20px) !important; }
+.margin-bottom-25 { margin-bottom: calcRem(25px) !important; }
+.margin-bottom-30 { margin-bottom: calcRem(30px) !important; }
+.margin-bottom-50 { margin-bottom: calcRem(50px) !important; }
+.margin-bottom-60 { margin-bottom: calcRem(60px) !important; }
+.margin-left-0  { margin-left: 0 !important; }
+.margin-left-10 { margin-left: calcRem(10px) !important; }
+.margin-left-15 { margin-left: calcRem(15px) !important; }
+.margin-left-20 { margin-left: calcRem(20px) !important; }
+.margin-left-25 { margin-left: calcRem(25px) !important; }
+.margin-left-30 { margin-left: calcRem(30px) !important; }
+.margin-left-50 { margin-left: calcRem(50px) !important; }
+.margin-left-60 { margin-left: calcRem(60px) !important; }
+.padding-0 { padding: 0 !important; }
+.padding-10 { padding: calcRem(10px) !important; }
+.padding-15 { padding: calcRem(15px) !important; }
+.padding-20 { padding: calcRem(20px) !important; }
+.padding-25 { padding: calcRem(25px) !important; }
+.padding-30 { padding: calcRem(30px) !important; }
+.padding-50 { padding: calcRem(50px) !important; }
+.padding-60 { padding: calcRem(60px) !important; }
+.padding-top-0  { padding-top: 0 !important; }
+.padding-top-10 { padding-top: calcRem(10px) !important; }
+.padding-top-15 { padding-top: calcRem(15px) !important; }
+.padding-top-20 { padding-top: calcRem(20px) !important; }
+.padding-top-25 { padding-top: calcRem(25px) !important; }
+.padding-top-30 { padding-top: calcRem(30px) !important; }
+.padding-top-50 { padding-top: calcRem(50px) !important; }
+.padding-top-60 { padding-top: calcRem(60px) !important; }
+.padding-right-0  { padding-right: 0 !important; }
+.padding-right-10 { padding-right: calcRem(10px) !important; }
+.padding-right-15 { padding-right: calcRem(15px) !important; }
+.padding-right-20 { padding-right: calcRem(20px) !important; }
+.padding-right-25 { padding-right: calcRem(25px) !important; }
+.padding-right-30 { padding-right: calcRem(30px) !important; }
+.padding-right-50 { padding-right: calcRem(50px) !important; }
+.padding-right-60 { padding-right: calcRem(60px) !important; }
+.padding-bottom-0  { padding-bottom: 0 !important; }
+.padding-bottom-10 { padding-bottom: calcRem(10px) !important; }
+.padding-bottom-15 { padding-bottom: calcRem(15px) !important; }
+.padding-bottom-20 { padding-bottom: calcRem(20px) !important; }
+.padding-bottom-25 { padding-bottom: calcRem(25px) !important; }
+.padding-bottom-30 { padding-bottom: calcRem(30px) !important; }
+.padding-bottom-50 { padding-bottom: calcRem(50px) !important; }
+.padding-bottom-60 { padding-bottom: calcRem(60px) !important; }
+.padding-left-0  { padding-left: 0 !important; }
+.padding-left-10 { padding-left: calcRem(10px) !important; }
+.padding-left-15 { padding-left: calcRem(15px) !important; }
+.padding-left-20 { padding-left: calcRem(20px) !important; }
+.padding-left-25 { padding-left: calcRem(25px) !important; }
+.padding-left-30 { padding-left: calcRem(30px) !important; }
+.padding-left-50 { padding-left: calcRem(50px) !important; }
+.padding-left-60 { padding-left: calcRem(60px) !important; }
+
+
+/* !STYLE ELEMENTS */
+/* ========================================================================== */
+.box-shadow {
+    box-shadow: 0px 5px 15px rgba(black, 0.15);
+}
+
+/* !OVERLAYS */
+/* ========================================================================== */
+[class*='overlay-'] {
+    position: relative;
+    z-index: 0;
+    &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        transition: background-color 0.3s ease-out;
+        z-index: -1;
+    }
+}
+.overlay-black:before { background-color: rgba(black, 0.3); }
+.overlay-black:hover:before { background-color: rgba(black, 0.6); }
+.overlay-white:before { background-color: rgba(white, 0.3); }
+.overlay-white:hover:before { background-color: rgba(white, 0.6); }
+.overlay-tan:before { background-color: rgba($rgb-tan, 0.3); }
+.overlay-tan:hover:before { background-color: rgba($rgb-tan, 0.6); }
+.overlay-brown:before { background-color: rgba($rgb-mnp-brown, 0.3); }
+.overlay-brown:hover:before { background-color: rgba($rgb-mnp-brown, 0.6); }
+// Static overlays
+.overlay-static-black:before { background-color: rgba(black, 0.6) !important; }
+.overlay-static-white:before { background-color: rgba(white, 0.8) !important; }
+.overlay-static-tan:before { background-color: rgba($rgb-tan, 0.8) !important; }
+.overlay-static-brown:before { background-color: rgba($rgb-mnp-brown, 0.9) !important; }
+.overlay-static-light-brown:before { background-color: rgba($rgb-mnp-brown, 0.6) !important; }
+.overlay-static-grey:before { background-color: rgba(197,197,197, 0.8) !important; }
+
+
+/* !BUTTONS */
+/* ========================================================================== */
+/**
+ * Below is to remove the shitty blue background that happens on the
+ * standard MNP button when it's hovered and active
+ */
+@mixin btn {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+.btn.btn-primary:active:hover {
+    background-color: transparent;
+    border-color: white;
+}
+.btn.btn-outline-white {
+    background: transparent;
+    border-color: white;
+    border-width: 2px;
+    color: white !important;
+    @include btn;
+}
+.btn.btn-outline-white:hover {
+    background: white;
+    color: #035642 !important;
+}
+
+
+/* !SERVICES IN HERO BANNER */
+/* ========================================================================== */
+#heroWrap {
+    padding-bottom: 50px;
+    h1 {
+        font-weight: 700;
+        text-transform: uppercase;
+        color: white;
+    }
+    .service {
+        cursor: pointer;
+        padding: 2.5rem;
+        position: relative;
+        background-color: transparent;
+        transition: all 0.2s ease-out;
+        padding-right: 50px;
+        h3 { color: white; }
+        .view {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            padding: 0px 7px;
+            border: 1px solid white;
+            .icon-mnp-arrow-2015-v4:before {
+                filter: brightness(0%) invert(1);
+            }
+        }
+        .serv-content {
+            display: none;
+            position: absolute;
+            width: 100%;
+            padding: 15px;
+            left: 0;
+            top: 0;
+            background-color: $rgb-mnp-green;
+            z-index: 1;
+            color: white;
+            h4 { color: white; }
+            .btn.btn-primary {
+                border: 1px solid white;
+                background-color: transparent;
+                color: white !important;
+            }
+        }
+        @include breakpoint($break-s) { height: 11rem; }
+        @include breakpoint($break-m) { height: 13rem; }
+    }
+    .service + .service { border-top: 1px solid rgba(white, 0.2); }
+    .services {
+        > div:nth-child(1):hover,
+        > div:nth-child(1) .serv-content  { background-color: #fbb034; }
+        > div:nth-child(2):hover,
+        > div:nth-child(2) .serv-content  { background-color: #976c1b; }
+        > div:nth-child(3):hover,
+        > div:nth-child(3) .serv-content  { background-color: #b0b579; }
+        > div:nth-child(4):hover,
+        > div:nth-child(4) .serv-content  { background-color: #006b6e; }
+        > div:nth-child(5):hover,
+        > div:nth-child(5) .serv-content  { background-color: #5c2946; }
+        > div:nth-child(6):hover,
+        > div:nth-child(6) .serv-content  { background-color: #5f3844; }
+        > div:nth-child(7):hover,
+        > div:nth-child(7) .serv-content  { background-color: #974338; }
+        > div:nth-child(8):hover,
+        > div:nth-child(8) .serv-content  { background-color: #73afb6; }
+        > div:nth-child(9):hover,
+        > div:nth-child(9) .serv-content  { background-color: #008698; }
+        > div:nth-child(10):hover,
+        > div:nth-child(10) .serv-content { background-color: #677718; }
+        > div:nth-child(11):hover,
+        > div:nth-child(11) .serv-content { background-color: #deb408; }
+        @include breakpoint($break-s) {
+            border-top: 1px solid white;
+            > div { border-bottom: 1px solid white; }
+            > div:nth-child(odd) { border-right: 1px solid white; }
+        }
+        @include breakpoint($break-m ($break-l - 1px)) {
+            > div:nth-child(3n-2),
+            > div:nth-child(3n-1) { border-right: 1px solid white; }
+        }
+        @include breakpoint($break-l ($break-xl - 1px)) {
+            > div:nth-child(4n-3),
+            > div:nth-child(4n-2),
+            > div:nth-child(4n-1) { border-right: 1px solid white; }
+        }
+        @include breakpoint($break-xl) {
+            > div:nth-child(6n-5),
+            > div:nth-child(6n-4),
+            > div:nth-child(6n-3),
+            > div:nth-child(6n-2),
+            > div:nth-child(6n-1) { border-right: 1px solid white; }
+        }
+    }
+}
