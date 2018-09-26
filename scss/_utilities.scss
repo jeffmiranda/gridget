@@ -1,0 +1,5 @@
+/* !FUNCTIONS */
+/* ========================================================================== */
+@function calcRem($targetpx) {
+	@return ($targetpx / 16px) * 1rem;
+}

@@ -1,0 +1,25 @@
+/* !BREAKPOINTS */
+/* ========================================================================== */
+$break-xxl: 1400px;
+$break-xl: 1200px;
+$break-l: 992px;
+$break-m: 768px;
+$break-s: 576px;
+
+
+/* !SUSY DEFAULTS */
+/* ========================================================================== */
+$gutters: 0.5;
+$columns: 12;
+$susy: (
+	'columns': susy-repeat($columns),
+	'gutters': $gutters,
+    'spread': 'narrow',
+    'container-spread': 'narrow'
+);
+$no-gut: (
+	'columns': susy-repeat($columns),
+	'gutters': 0,
+    'spread': 'narrow',
+    'container-spread': 'narrow'
+);
