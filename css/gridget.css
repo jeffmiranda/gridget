@@ -32,6 +32,282 @@
     margin-bottom: 2.8571428571%; }
     .gridget.gutters > [class*="col-"]:last-child {
       margin-bottom: 0; }
+  .gridget > .col-1 {
+    float: left;
+    width: 8.3333333333%;
+    max-width: 8.3333333333%;
+    flex: 0 0 8.3333333333%;
+    margin-bottom: 0; }
+    .gridget > .col-1:last-child {
+      float: right;
+      margin-right: 0; }
+  .gridget > .col-2 {
+    float: left;
+    width: 16.6666666667%;
+    max-width: 16.6666666667%;
+    flex: 0 0 16.6666666667%;
+    margin-bottom: 0; }
+    .gridget > .col-2:last-child {
+      float: right;
+      margin-right: 0; }
+  .gridget > .col-3 {
+    float: left;
+    width: 25%;
+    max-width: 25%;
+    flex: 0 0 25%;
+    margin-bottom: 0; }
+    .gridget > .col-3:last-child {
+      float: right;
+      margin-right: 0; }
+  .gridget > .col-4 {
+    float: left;
+    width: 33.3333333333%;
+    max-width: 33.3333333333%;
+    flex: 0 0 33.3333333333%;
+    margin-bottom: 0; }
+    .gridget > .col-4:last-child {
+      float: right;
+      margin-right: 0; }
+  .gridget > .col-5 {
+    float: left;
+    width: 41.6666666667%;
+    max-width: 41.6666666667%;
+    flex: 0 0 41.6666666667%;
+    margin-bottom: 0; }
+    .gridget > .col-5:last-child {
+      float: right;
+      margin-right: 0; }
+  .gridget > .col-6 {
+    float: left;
+    width: 50%;
+    max-width: 50%;
+    flex: 0 0 50%;
+    margin-bottom: 0; }
+    .gridget > .col-6:last-child {
+      float: right;
+      margin-right: 0; }
+  .gridget > .col-7 {
+    float: left;
+    width: 58.3333333333%;
+    max-width: 58.3333333333%;
+    flex: 0 0 58.3333333333%;
+    margin-bottom: 0; }
+    .gridget > .col-7:last-child {
+      float: right;
+      margin-right: 0; }
+  .gridget > .col-8 {
+    float: left;
+    width: 66.6666666667%;
+    max-width: 66.6666666667%;
+    flex: 0 0 66.6666666667%;
+    margin-bottom: 0; }
+    .gridget > .col-8:last-child {
+      float: right;
+      margin-right: 0; }
+  .gridget > .col-9 {
+    float: left;
+    width: 75%;
+    max-width: 75%;
+    flex: 0 0 75%;
+    margin-bottom: 0; }
+    .gridget > .col-9:last-child {
+      float: right;
+      margin-right: 0; }
+  .gridget > .col-10 {
+    float: left;
+    width: 83.3333333333%;
+    max-width: 83.3333333333%;
+    flex: 0 0 83.3333333333%;
+    margin-bottom: 0; }
+    .gridget > .col-10:last-child {
+      float: right;
+      margin-right: 0; }
+  .gridget > .col-11 {
+    float: left;
+    width: 91.6666666667%;
+    max-width: 91.6666666667%;
+    flex: 0 0 91.6666666667%;
+    margin-bottom: 0; }
+    .gridget > .col-11:last-child {
+      float: right;
+      margin-right: 0; }
+  .gridget > .col-12 {
+    float: left;
+    width: 100%;
+    max-width: 100%;
+    flex: 0 0 100%;
+    margin-bottom: 0; }
+    .gridget > .col-12:last-child {
+      float: right;
+      margin-right: 0; }
+  .gridget .push-1 {
+    margin-left: 8.3333333333%; }
+  .gridget .push-2 {
+    margin-left: 16.6666666667%; }
+  .gridget .push-3 {
+    margin-left: 25%; }
+  .gridget .push-4 {
+    margin-left: 33.3333333333%; }
+  .gridget .push-5 {
+    margin-left: 41.6666666667%; }
+  .gridget .push-6 {
+    margin-left: 50%; }
+  .gridget .push-7 {
+    margin-left: 58.3333333333%; }
+  .gridget .push-8 {
+    margin-left: 66.6666666667%; }
+  .gridget .push-9 {
+    margin-left: 75%; }
+  .gridget .push-10 {
+    margin-left: 83.3333333333%; }
+  .gridget .push-11 {
+    margin-left: 91.6666666667%; }
+  .gridget .push-12 {
+    margin-left: 100%; }
+  .gridget.gutters > .col-1 {
+    margin-right: 2.8571428571%;
+    float: left;
+    width: 5.7142857143%;
+    max-width: 5.7142857143%;
+    flex: 0 0 5.7142857143%;
+    margin-bottom: 0; }
+    .gridget.gutters > .col-1:last-child {
+      float: right;
+      margin-right: 0; }
+  .gridget.gutters > .col-2 {
+    margin-right: 2.8571428571%;
+    float: left;
+    width: 14.2857142857%;
+    max-width: 14.2857142857%;
+    flex: 0 0 14.2857142857%;
+    margin-bottom: 0; }
+    .gridget.gutters > .col-2:last-child {
+      float: right;
+      margin-right: 0; }
+  .gridget.gutters > .col-3 {
+    margin-right: 2.8571428571%;
+    float: left;
+    width: 22.8571428571%;
+    max-width: 22.8571428571%;
+    flex: 0 0 22.8571428571%;
+    margin-bottom: 0; }
+    .gridget.gutters > .col-3:last-child {
+      float: right;
+      margin-right: 0; }
+  .gridget.gutters > .col-4 {
+    margin-right: 2.8571428571%;
+    float: left;
+    width: 31.4285714286%;
+    max-width: 31.4285714286%;
+    flex: 0 0 31.4285714286%;
+    margin-bottom: 0; }
+    .gridget.gutters > .col-4:last-child {
+      float: right;
+      margin-right: 0; }
+  .gridget.gutters > .col-5 {
+    margin-right: 2.8571428571%;
+    float: left;
+    width: 40%;
+    max-width: 40%;
+    flex: 0 0 40%;
+    margin-bottom: 0; }
+    .gridget.gutters > .col-5:last-child {
+      float: right;
+      margin-right: 0; }
+  .gridget.gutters > .col-6 {
+    margin-right: 2.8571428571%;
+    float: left;
+    width: 48.5714285714%;
+    max-width: 48.5714285714%;
+    flex: 0 0 48.5714285714%;
+    margin-bottom: 0; }
+    .gridget.gutters > .col-6:last-child {
+      float: right;
+      margin-right: 0; }
+  .gridget.gutters > .col-7 {
+    margin-right: 2.8571428571%;
+    float: left;
+    width: 57.1428571429%;
+    max-width: 57.1428571429%;
+    flex: 0 0 57.1428571429%;
+    margin-bottom: 0; }
+    .gridget.gutters > .col-7:last-child {
+      float: right;
+      margin-right: 0; }
+  .gridget.gutters > .col-8 {
+    margin-right: 2.8571428571%;
+    float: left;
+    width: 65.7142857143%;
+    max-width: 65.7142857143%;
+    flex: 0 0 65.7142857143%;
+    margin-bottom: 0; }
+    .gridget.gutters > .col-8:last-child {
+      float: right;
+      margin-right: 0; }
+  .gridget.gutters > .col-9 {
+    margin-right: 2.8571428571%;
+    float: left;
+    width: 74.2857142857%;
+    max-width: 74.2857142857%;
+    flex: 0 0 74.2857142857%;
+    margin-bottom: 0; }
+    .gridget.gutters > .col-9:last-child {
+      float: right;
+      margin-right: 0; }
+  .gridget.gutters > .col-10 {
+    margin-right: 2.8571428571%;
+    float: left;
+    width: 82.8571428571%;
+    max-width: 82.8571428571%;
+    flex: 0 0 82.8571428571%;
+    margin-bottom: 0; }
+    .gridget.gutters > .col-10:last-child {
+      float: right;
+      margin-right: 0; }
+  .gridget.gutters > .col-11 {
+    margin-right: 2.8571428571%;
+    float: left;
+    width: 91.4285714286%;
+    max-width: 91.4285714286%;
+    flex: 0 0 91.4285714286%;
+    margin-bottom: 0; }
+    .gridget.gutters > .col-11:last-child {
+      float: right;
+      margin-right: 0; }
+  .gridget.gutters > .col-12 {
+    margin-right: 2.8571428571%;
+    float: left;
+    width: 100%;
+    max-width: 100%;
+    flex: 0 0 100%;
+    margin-bottom: 0; }
+    .gridget.gutters > .col-12:last-child {
+      float: right;
+      margin-right: 0; }
+  .gridget.gutters .push-1 {
+    margin-left: 8.5714285714%; }
+  .gridget.gutters .push-2 {
+    margin-left: 17.1428571429%; }
+  .gridget.gutters .push-3 {
+    margin-left: 25.7142857143%; }
+  .gridget.gutters .push-4 {
+    margin-left: 34.2857142857%; }
+  .gridget.gutters .push-5 {
+    margin-left: 42.8571428571%; }
+  .gridget.gutters .push-6 {
+    margin-left: 51.4285714286%; }
+  .gridget.gutters .push-7 {
+    margin-left: 60%; }
+  .gridget.gutters .push-8 {
+    margin-left: 68.5714285714%; }
+  .gridget.gutters .push-9 {
+    margin-left: 77.1428571429%; }
+  .gridget.gutters .push-10 {
+    margin-left: 85.7142857143%; }
+  .gridget.gutters .push-11 {
+    margin-left: 94.2857142857%; }
+  .gridget.gutters .push-12 {
+    margin-left: 102.857142857%; }
   @media (min-width: 576px) {
     .gridget > .col-sm1 {
       float: left;
@@ -1436,7 +1712,7 @@
 /* !HELPER CLASSES */
 /* ========================================================================== */
 .max-wrap {
-  max-width: 1200px;
+  max-width: 1400px;
   margin-left: auto;
   margin-right: auto; }
   .max-wrap::after {
@@ -1445,121 +1721,133 @@
     clear: both; }
 
 .padding {
-  padding: 2.8571428571%; }
+  padding: 2.8571428571% !important; }
 
 .padding-2x {
-  padding: 5.7142857143%; }
+  padding: 5.7142857143% !important; }
 
 .padding-3x {
-  padding: 8.5714285714%; }
+  padding: 8.5714285714% !important; }
 
 .padding-4x {
-  padding: 11.4285714286%; }
+  padding: 11.4285714286% !important; }
 
 .padding-top {
-  padding-top: 2.8571428571%; }
+  padding-top: 2.8571428571% !important; }
 
 .padding-top-2x {
-  padding-top: 5.7142857143%; }
+  padding-top: 5.7142857143% !important; }
 
 .padding-top-3x {
-  padding-top: 8.5714285714%; }
+  padding-top: 8.5714285714% !important; }
 
 .padding-top-4x {
-  padding-top: 11.4285714286%; }
+  padding-top: 11.4285714286% !important; }
 
 .padding-right {
-  padding-right: 2.8571428571%; }
+  padding-right: 2.8571428571% !important; }
 
 .padding-right-2x {
-  padding-right: 5.7142857143%; }
+  padding-right: 5.7142857143% !important; }
 
 .padding-right-3x {
-  padding-right: 8.5714285714%; }
+  padding-right: 8.5714285714% !important; }
 
 .padding-right-4x {
-  padding-right: 11.4285714286%; }
+  padding-right: 11.4285714286% !important; }
 
 .padding-bottom {
-  padding-bottom: 2.8571428571%; }
+  padding-bottom: 2.8571428571% !important; }
 
 .padding-bottom-2x {
-  padding-bottom: 5.7142857143%; }
+  padding-bottom: 5.7142857143% !important; }
 
 .padding-bottom-3x {
-  padding-bottom: 8.5714285714%; }
+  padding-bottom: 8.5714285714% !important; }
 
 .padding-bottom-4x {
-  padding-bottom: 11.4285714286%; }
+  padding-bottom: 11.4285714286% !important; }
 
 .padding-left {
-  padding-left: 2.8571428571%; }
+  padding-left: 2.8571428571% !important; }
 
 .padding-left-2x {
-  padding-left: 5.7142857143%; }
+  padding-left: 5.7142857143% !important; }
 
 .padding-left-3x {
-  padding-left: 8.5714285714%; }
+  padding-left: 8.5714285714% !important; }
 
 .padding-left-4x {
-  padding-left: 11.4285714286%; }
+  padding-left: 11.4285714286% !important; }
 
 .margin {
-  margin: 2.8571428571%; }
+  margin: 2.8571428571% !important; }
 
 .margin-2x {
-  margin: 5.7142857143%; }
+  margin: 5.7142857143% !important; }
 
 .margin-3x {
-  margin: 8.5714285714%; }
+  margin: 8.5714285714% !important; }
 
 .margin-4x {
-  margin: 11.4285714286%; }
+  margin: 11.4285714286% !important; }
 
 .margin-top {
-  margin-top: 2.8571428571%; }
+  margin-top: 2.8571428571% !important; }
 
 .margin-top-2x {
-  margin-top: 5.7142857143%; }
+  margin-top: 5.7142857143% !important; }
 
 .margin-top-3x {
-  margin-top: 8.5714285714%; }
+  margin-top: 8.5714285714% !important; }
 
 .margin-top-4x {
-  margin-top: 11.4285714286%; }
+  margin-top: 11.4285714286% !important; }
+
+.margin-top-auto {
+  margin-top: auto !important; }
 
 .margin-right {
-  margin-right: 2.8571428571%; }
+  margin-right: 2.8571428571% !important; }
 
 .margin-right-2x {
-  margin-right: 5.7142857143%; }
+  margin-right: 5.7142857143% !important; }
 
 .margin-right-3x {
-  margin-right: 8.5714285714%; }
+  margin-right: 8.5714285714% !important; }
 
 .margin-right-4x {
-  margin-right: 11.4285714286%; }
+  margin-right: 11.4285714286% !important; }
+
+.margin-right-auto {
+  margin-right: auto !important; }
 
 .margin-bottom {
-  margin-bottom: 2.8571428571%; }
+  margin-bottom: 2.8571428571% !important; }
 
 .margin-bottom-2x {
-  margin-bottom: 5.7142857143%; }
+  margin-bottom: 5.7142857143% !important; }
 
 .margin-bottom-3x {
-  margin-bottom: 8.5714285714%; }
+  margin-bottom: 8.5714285714% !important; }
 
 .margin-bottom-4x {
-  margin-bottom: 11.4285714286%; }
+  margin-bottom: 11.4285714286% !important; }
+
+.margin-bottom-auto {
+  margin-bottom: auto !important; }
 
 .margin-left {
-  margin-left: 2.8571428571%; }
+  margin-left: 2.8571428571% !important; }
 
 .margin-left-2x {
-  margin-left: 5.7142857143%; }
+  margin-left: 5.7142857143% !important; }
 
 .margin-left-3x {
-  margin-left: 8.5714285714%; }
+  margin-left: 8.5714285714% !important; }
 
 .margin-left-4x {
-  margin-left: 11.4285714286%; }
+  margin-left: 11.4285714286% !important; }
+
+.margin-left-auto {
+  margin-left: auto !important; }

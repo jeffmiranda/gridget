@@ -56,6 +56,56 @@
         margin-bottom: gutter();
         &:last-child { margin-bottom: 0; }
     }
+    > .col-1 { @include col(1, $no-gut); }
+    > .col-2 { @include col(2, $no-gut); }
+    > .col-3 { @include col(3, $no-gut); }
+    > .col-4 { @include col(4, $no-gut); }
+    > .col-5 { @include col(5, $no-gut); }
+    > .col-6 { @include col(6, $no-gut); }
+    > .col-7 { @include col(7, $no-gut); }
+    > .col-8 { @include col(8, $no-gut); }
+    > .col-9 { @include col(9, $no-gut); }
+    > .col-10 { @include col(10, $no-gut); }
+    > .col-11 { @include col(11, $no-gut); }
+    > .col-12 { @include col(12, $no-gut); }
+    .push-1 { margin-left: span(1, $no-gut); }
+    .push-2 { margin-left: span(2, $no-gut); }
+    .push-3 { margin-left: span(3, $no-gut); }
+    .push-4 { margin-left: span(4, $no-gut); }
+    .push-5 { margin-left: span(5, $no-gut); }
+    .push-6 { margin-left: span(6, $no-gut); }
+    .push-7 { margin-left: span(7, $no-gut); }
+    .push-8 { margin-left: span(8, $no-gut); }
+    .push-9 { margin-left: span(9, $no-gut); }
+    .push-10 { margin-left: span(10, $no-gut); }
+    .push-11 { margin-left: span(11, $no-gut); }
+    .push-12 { margin-left: span(12, $no-gut); }
+    &.gutters {
+        > .col-1 { margin-right: gutter(); @include col(1); }
+        > .col-2 { margin-right: gutter(); @include col(2); }
+        > .col-3 { margin-right: gutter(); @include col(3); }
+        > .col-4 { margin-right: gutter(); @include col(4); }
+        > .col-5 { margin-right: gutter(); @include col(5); }
+        > .col-6 { margin-right: gutter(); @include col(6); }
+        > .col-7 { margin-right: gutter(); @include col(7); }
+        > .col-8 { margin-right: gutter(); @include col(8); }
+        > .col-9 { margin-right: gutter(); @include col(9); }
+        > .col-10 { margin-right: gutter(); @include col(10); }
+        > .col-11 { margin-right: gutter(); @include col(11); }
+        > .col-12 { margin-right: gutter(); @include col(12); }
+        .push-1 { margin-left: span(1 wide); }
+        .push-2 { margin-left: span(2 wide); }
+        .push-3 { margin-left: span(3 wide); }
+        .push-4 { margin-left: span(4 wide); }
+        .push-5 { margin-left: span(5 wide); }
+        .push-6 { margin-left: span(6 wide); }
+        .push-7 { margin-left: span(7 wide); }
+        .push-8 { margin-left: span(8 wide); }
+        .push-9 { margin-left: span(9 wide); }
+        .push-10 { margin-left: span(10 wide); }
+        .push-11 { margin-left: span(11 wide); }
+        .push-12 { margin-left: span(12 wide); }
+    }
     @include breakpoint($break-s) {
         > .col-sm1 { @include col(1, $no-gut); }
         > .col-sm2 { @include col(2, $no-gut); }
@@ -328,44 +378,48 @@
 
 /* !HELPER CLASSES */
 /* ========================================================================== */
-.max-wrap { @include container($break-xl); }
-.padding { padding: gutter(); }
-.padding-2x { padding: gutter()*2; }
-.padding-3x { padding: gutter()*3; }
-.padding-4x { padding: gutter()*4; }
-.padding-top { padding-top: gutter(); }
-.padding-top-2x { padding-top: gutter()*2; }
-.padding-top-3x { padding-top: gutter()*3; }
-.padding-top-4x { padding-top: gutter()*4; }
-.padding-right { padding-right: gutter(); }
-.padding-right-2x { padding-right: gutter()*2; }
-.padding-right-3x { padding-right: gutter()*3; }
-.padding-right-4x { padding-right: gutter()*4; }
-.padding-bottom { padding-bottom: gutter(); }
-.padding-bottom-2x { padding-bottom: gutter()*2; }
-.padding-bottom-3x { padding-bottom: gutter()*3; }
-.padding-bottom-4x { padding-bottom: gutter()*4; }
-.padding-left { padding-left: gutter(); }
-.padding-left-2x { padding-left: gutter()*2; }
-.padding-left-3x { padding-left: gutter()*3; }
-.padding-left-4x { padding-left: gutter()*4; }
-.margin { margin: gutter(); }
-.margin-2x { margin: gutter()*2; }
-.margin-3x { margin: gutter()*3; }
-.margin-4x { margin: gutter()*4; }
-.margin-top { margin-top: gutter(); }
-.margin-top-2x { margin-top: gutter()*2; }
-.margin-top-3x { margin-top: gutter()*3; }
-.margin-top-4x { margin-top: gutter()*4; }
-.margin-right { margin-right: gutter(); }
-.margin-right-2x { margin-right: gutter()*2; }
-.margin-right-3x { margin-right: gutter()*3; }
-.margin-right-4x { margin-right: gutter()*4; }
-.margin-bottom { margin-bottom: gutter(); }
-.margin-bottom-2x { margin-bottom: gutter()*2; }
-.margin-bottom-3x { margin-bottom: gutter()*3; }
-.margin-bottom-4x { margin-bottom: gutter()*4; }
-.margin-left { margin-left: gutter(); }
-.margin-left-2x { margin-left: gutter()*2; }
-.margin-left-3x { margin-left: gutter()*3; }
-.margin-left-4x { margin-left: gutter()*4; }
+.max-wrap { @include container($break-xxl); }
+.padding { padding: gutter() !important; }
+.padding-2x { padding: gutter()*2 !important; }
+.padding-3x { padding: gutter()*3 !important; }
+.padding-4x { padding: gutter()*4 !important; }
+.padding-top { padding-top: gutter() !important; }
+.padding-top-2x { padding-top: gutter()*2 !important; }
+.padding-top-3x { padding-top: gutter()*3 !important; }
+.padding-top-4x { padding-top: gutter()*4 !important; }
+.padding-right { padding-right: gutter() !important; }
+.padding-right-2x { padding-right: gutter()*2 !important; }
+.padding-right-3x { padding-right: gutter()*3 !important; }
+.padding-right-4x { padding-right: gutter()*4 !important; }
+.padding-bottom { padding-bottom: gutter() !important; }
+.padding-bottom-2x { padding-bottom: gutter()*2 !important; }
+.padding-bottom-3x { padding-bottom: gutter()*3 !important; }
+.padding-bottom-4x { padding-bottom: gutter()*4 !important; }
+.padding-left { padding-left: gutter() !important; }
+.padding-left-2x { padding-left: gutter()*2 !important; }
+.padding-left-3x { padding-left: gutter()*3 !important; }
+.padding-left-4x { padding-left: gutter()*4 !important; }
+.margin { margin: gutter() !important; }
+.margin-2x { margin: gutter()*2 !important; }
+.margin-3x { margin: gutter()*3 !important; }
+.margin-4x { margin: gutter()*4 !important; }
+.margin-top { margin-top: gutter() !important; }
+.margin-top-2x { margin-top: gutter()*2 !important; }
+.margin-top-3x { margin-top: gutter()*3 !important; }
+.margin-top-4x { margin-top: gutter()*4 !important; }
+.margin-top-auto { margin-top: auto !important; }
+.margin-right { margin-right: gutter() !important; }
+.margin-right-2x { margin-right: gutter()*2 !important; }
+.margin-right-3x { margin-right: gutter()*3 !important; }
+.margin-right-4x { margin-right: gutter()*4 !important; }
+.margin-right-auto { margin-right: auto !important; }
+.margin-bottom { margin-bottom: gutter() !important; }
+.margin-bottom-2x { margin-bottom: gutter()*2 !important; }
+.margin-bottom-3x { margin-bottom: gutter()*3 !important; }
+.margin-bottom-4x { margin-bottom: gutter()*4 !important; }
+.margin-bottom-auto { margin-bottom: auto !important; }
+.margin-left { margin-left: gutter() !important; }
+.margin-left-2x { margin-left: gutter()*2 !important; }
+.margin-left-3x { margin-left: gutter()*3 !important; }
+.margin-left-4x { margin-left: gutter()*4 !important; }
+.margin-left-auto { margin-left: auto !important; }

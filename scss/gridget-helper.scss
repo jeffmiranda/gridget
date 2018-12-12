@@ -99,6 +99,8 @@
 /* !TEXT FORMATTING */
 /* ========================================================================== */
 .centre-txt { text-align: center !important; }
+.left-txt { text-align: left !important; }
+.right-txt { text-align: right !important; }
 .black-txt { color: black !important; }
 .white-txt { color: white !important; }
 .uppercase { text-transform: uppercase !important; }
@@ -129,8 +131,21 @@
 
 /* !LAYOUT */
 /* ========================================================================== */
-.float-left { float: left !important; }
-.float-right { float: right !important; }
+.inline       { display: inline !important; }
+.inline-block { display: inline-block !important; }
+.block        { display: block !important; }
+.float-left                                        { float: left !important; }
+.float-left-sm  { @include breakpoint($break-s)    { float: left !important; } }
+.float-left-md  { @include breakpoint($break-m)    { float: left !important; } }
+.float-left-lg  { @include breakpoint($break-l)    { float: left !important; } }
+.float-left-xl  { @include breakpoint($break-xl)   { float: left !important; } }
+.float-left-xxl { @include breakpoint($break-xxl)  { float: left !important; } }
+.float-right                                       { float: right !important; }
+.float-right-sm  { @include breakpoint($break-s)   { float: right !important; } }
+.float-right-md  { @include breakpoint($break-m)   { float: right !important; } }
+.float-right-lg  { @include breakpoint($break-l)   { float: right !important; } }
+.float-right-xl  { @include breakpoint($break-xl)  { float: right !important; } }
+.float-right-xxl { @include breakpoint($break-xxl) { float: right !important; } }
 .margin-0 { margin: 0 !important; }
 .margin-10 { margin: calcRem(10px) !important; }
 .margin-15 { margin: calcRem(15px) !important; }
