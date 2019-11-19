@@ -451,6 +451,15 @@
 .padding-left-60 {
   padding-left: 3.75rem !important; }
 
+.max-width-400 {
+  max-width: 400px; }
+
+.max-width-600 {
+  max-width: 600px; }
+
+.max-width-800 {
+  max-width: 800px; }
+
 /* !STYLE ELEMENTS */
 /* ========================================================================== */
 .box-shadow {
